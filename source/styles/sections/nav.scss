@@ -1,0 +1,38 @@
+.nav {
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    @media only screen and (min-width: 1200px) {
+      display: inline-block;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0 24px;
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+
+    @media only screen and (max-width: 1499px) and (min-width: 1200px) {
+      padding: 0 15px;
+      font-size: 20px;
+    }
+
+    &:hover {
+      font-size: 28px;
+      transition: 0.3s;
+    }
+  }
+
+  &__text {
+    @media only screen and (min-width: 1200px) {
+      padding: 8px 0;
+      border-bottom: 2px solid transparent;
+    }
+  }
+}

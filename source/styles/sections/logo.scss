@@ -1,0 +1,13 @@
+.logo {
+  display: block;
+  padding: 16px 8px;
+  color: #002f2f;
+
+  &__image {
+    vertical-align: middle;
+
+    @media only screen and (min-width: 992px) {
+      width: 20px;
+    }
+  }
+}

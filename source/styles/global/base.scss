@@ -1,27 +1,43 @@
 body {
-    //font-family: $ff-main;
-    font-size: 1rem;
-    line-height: 1.2;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #faf9ef;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+a {
+  background-color: transparent;
+}
+
+img {
+  border-style: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
   }
-  
-  html {
-    box-sizing: border-box;    
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  ul,
-  ol {
-    list-style-type: none;
-  }
-  
-  .clearfix {
-  
-    &:after {
-      content: '';
-      display: table;
-      clear: both;
-    }
-  }
+}

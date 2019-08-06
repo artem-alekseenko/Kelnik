@@ -1,0 +1,27 @@
+.contacts {
+  color: #ffffff;
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 26px;
+  }
+
+  &__phone {
+    display: block;
+    text-decoration: none;
+
+    @media only screen and (min-width: 1200px) {
+      color: #ffffff;
+      font-size: 1em;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @media only screen and (min-width: 1200px) {
+      display: block;
+      font-size: 0.6em;
+      line-height: 1;
+    }
+  }
+}

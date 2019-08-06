@@ -1,0 +1,7 @@
+nav.nav
+    - var items = ['Объекты', 'Компания', 'Как купить', 'Агентам', 'Регионам', 'Акции', 'Контакты']
+    ul.nav__list
+        each item in items
+            li.nav__item
+                a(href="#").nav__link
+                    span.nav__text= item
