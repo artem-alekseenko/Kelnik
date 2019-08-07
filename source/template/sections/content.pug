@@ -1,0 +1,34 @@
+include ../mixins
+
+section.content
+    .container
+        h1.container__title Найдено 666 квартир
+    .content__flats.container
+        .sorter.content__sorter
+            span.sorter__label Сортировать по:
+                ul.sorter__list
+                    li.sorter__item
+                        button(class="sorter__button" data-sort="price")
+                            span.sorter__title Цене
+                            span.sorter__icon
+                                img.sorter__icon--arrow(src="./images/sort-arrow.svg", alt="sort-arrow")
+                    li.sorter__item
+                        button(class="sorter__button" data-sort="rooms")
+                            span.sorter__title Комнатам
+                            span.sorter__icon
+                                img.sorter__icon--arrow(src="./images/sort-arrow.svg", alt="sort-arrow")
+        .content__flats-cards
+            - for (var i = 0; i < 12; i++)
+                +flat-card({
+      "id": 11,
+      "title": "test",
+      "rooms": "1",
+      "image": "111",
+      "decoration": "без отделки",
+      "meters": "11",
+      "floor": "11/11",
+      "price": "11111",
+      "status": "забронировано"
+    })
+        .content__more
+            button.button.content__more-results Показать ещё                        
