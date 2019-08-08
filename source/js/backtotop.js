@@ -2,7 +2,8 @@ const backToTop = () => {
     const backToTopButton = document.querySelector(".backtotop")
 
     window.onscroll = () => {
-        const scrollTop = document.documentElement.scrollTop        
+        const scrollTop = document.documentElement.scrollTop 
+        
         if (scrollTop > 100) {
             backToTopButton.classList.add("backtotop--visible")
         } else {
