@@ -52,7 +52,7 @@ gulp.task('styles:compile', function () {
 /* -------- JS  -------- */
 gulp.task('js', function () {
     return gulp.src([
-        'source/js/init.js'
+        'source/js/backtotop.js'
     ])
         .pipe(gulpif(isDev, sourcemaps.init()))
         .pipe(babel({
