@@ -1,0 +1,125 @@
+.subscribe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 72px;
+  padding: 24px;
+  color: #fff;
+  background-color: #046380;
+
+  @media only screen and (min-width: 992px) {
+    justify-content: space-between;
+    padding: 55px;
+  }
+
+  &__desc {
+    margin-bottom: 32px;
+    text-align: center;
+
+    @media only screen and (min-width: 992px) {
+      padding-right: 20px;
+      text-align: left;
+      margin-bottom: 0;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 44%;
+    }
+  }
+
+  &__title {
+    font-size: 34px;
+    font-weight: 600;
+  }
+
+  &__text {
+    @media only screen and (min-width: 1200px) {
+      font-size: 18px;
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+
+    @media only screen and (min-width: 992px) {
+      justify-content: flex-start;
+      width: initial;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 56%;
+    }
+  }
+
+  &__form-fields {
+    @media only screen and (min-width: 1200px) {
+      width: 58%;
+    }
+  }
+
+  &__form-fields,
+  &__button-wrap {
+    @media only screen and (min-width: 480px) {
+      padding: 0 15px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      padding: 0 29px;
+    }
+  }
+
+  &__form-group {
+    @media only screen and (max-width: 479px) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 32px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 58%;
+    }
+  }
+
+  &__email {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  &__checkbox {
+    display: flex;
+    white-space: nowrap;
+
+    label {
+      padding-left: 10px;
+    }
+  }
+
+  &__button-wrap {
+    min-width: 248px;
+
+    @media only screen and (max-width: 479px) {
+      width: 100%;
+    }
+    @media only screen and (min-width: 1200px) {
+      width: 42%;
+    }
+  }
+
+  &-button {
+    background: $color-secondary;
+
+    &::before {
+      background: #b7b068;
+    }
+
+    @media only screen and (min-width: 768px) {
+      margin-bottom: 16px;
+    }
+  }
+}

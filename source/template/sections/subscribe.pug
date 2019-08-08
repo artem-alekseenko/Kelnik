@@ -1,0 +1,14 @@
+.subscribe.container
+    .subscribe__desc
+        .subscribe__title Успей купить!
+        .subscribe__text Подпишись и успей словить все акции
+    form(method="post" class="form subscribe-form")
+        .form__fields.subscribe__form-fields
+            input(id="email" type="email" name="email" class="subscribe__email" placeholder="E-mail" required pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/")
+            label(for="subscribe__email" class="is-hidden") Необходимо ввести email
+            label.check.subscribe__checkbox подписаться на новости
+                input(id="agreement" type="checkbox" name="agreement" class="check__input is-hidden")
+                span.check__box
+        .subscribe__button-wrap
+            button(type="submit" class="button subscribe-button") Отправить
+    .result
