@@ -1,0 +1,268 @@
+.content {
+  margin-bottom: 56px;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 72px;
+  }
+
+  &__flats {
+    padding-top: 24px;
+    padding-bottom: 72px;
+    background-color: #fff;
+
+    @media only screen and (max-width: 767px) {
+      padding-bottom: 56px;
+      padding-right: 8.333335vw;
+      padding-left: 8.333335vw;
+    }
+  }
+
+  &__sorter {
+    margin-bottom: 32px;
+    color: $color-main;
+
+    @media only screen and (min-width: 768px) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__flats-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__more-results {
+    display: block;
+    width: 530px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 26px 50px;
+    font-size: 14px;
+    background: #046380;
+  }
+}
+
+.sorter {
+  &__label {
+    @media only screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-left: 20px;
+
+    @media only screen and (max-width: 767px) {
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      .sorter__title {
+        border-bottom: 1px solid $color-main;
+      }
+    }
+  }
+
+  &__title {
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 19px;
+    height: 19px;
+    margin-left: 8px;
+
+    background: #f5f8f8;
+    border-radius: 50px;
+
+    &-arrow {
+      width: 8px;
+      height: 5px;
+      color: #046380;
+    }
+
+    &--asc {
+      .icon__sort-arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.flat {
+  position: relative;
+  width: 100%;
+  margin-bottom: 54px;
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    width: 48%;
+    margin-right: 4%;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+    width: 30.76923%;
+    margin-right: 3.84615%;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.flat-card {
+  display: block;
+
+  color: #333640;
+  font-weight: 300;
+  text-decoration: none;
+
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+
+  &--free {
+    border-color: $color-main;
+
+    &:hover {
+      box-shadow: 0 0 40px transparentize($color-main, 0.8);
+    }
+  }
+
+  &--booked {
+    border-color: #a7a37e;
+
+    &:hover {
+      box-shadow: 0 0 40px transparentize(#a7a37e, 0.5);
+    }
+  }
+
+  &--sold {
+    border-color: #a1a1a1;
+
+    &:hover {
+      box-shadow: 0 0 40px transparentize(#a1a1a1, 0.5);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 39px;
+    padding: 19px 17px 0 20px;
+  }
+
+  &__label {
+    padding: 4px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    background: #ff4444;
+    border-radius: 3px;
+  }
+
+  &__sale {
+    margin-right: 20px;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 225px;
+  }
+
+  &__main {
+    padding: 8px 15px 8px 20px;
+
+    @media only screen and (min-width: 992px) {
+      padding: 8px 15px 8px 50px;
+    }
+  }
+
+  &__title {
+    margin: 15px 0;
+
+    color: $color-main;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.2;
+
+    @media only screen and (min-width: 768px) {
+      min-height: 57px;
+      font-size: 24px;
+    }
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    line-height: 1;
+  }
+
+  &__decoration {
+    padding: 0 8px;
+    color: #046380;
+    font-size: 16px;
+    border-left: 2px solid #046380;
+  }
+
+  &__price {
+    margin: 30px 0;
+    font-size: 24px;
+    font-weight: bolder;
+  }
+
+  &__status {
+    padding: 8px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bolder;
+    text-align: center;
+    text-transform: uppercase;
+
+    &--free {
+      background-color: $color-main;
+    }
+
+    &--booked {
+      background-color: #a7a37e;
+    }
+
+    &--sold {
+      background-color: #a1a1a1;
+    }
+  }
+}

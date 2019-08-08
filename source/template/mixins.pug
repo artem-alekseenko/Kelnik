@@ -10,20 +10,22 @@ mixin flat-card(flat)
         default
             - status = "free"
     .flat
-        a(.flat-card.flat-card--${status})
+        a(class=`flat-card flat-card--${status}`)
             .flat-card__header
                 if flat.sale
                     span.flat-card__label.flat-card__sale= flat.sale
-                if flat.shokPrice
+                if flat.shockPrice
                     span.flat-card__label.flat-card__shock-price шок цена
+            .flat-card__image
+                img(class="flat-card__img" data-src=`${flat.image}` alt="план квартиры")
             .flat-card__main
                 .flat-card__title= flat.title
                 .flat-card__feature
                     .flat-card__decoration= flat.decoration
-                    .flat-card__square #{flat.square} м<sup>2<sup> площадь
+                    .flat-card__square #{flat.square} м<sup>2</sup> площадь
                     .flat-card__floor #{flat.floor} этаж
                 .flat-card__price= flat.price
             .flat-card__footer
                 .flat-card__status(.flat-card__status--${status})= flat.status
         button.button-favorite
-            img.button-favorite--arrow(src="./images/star.svg", alt="star")
+            img.button-favorite--star(src="./images/star.png", alt="star")
