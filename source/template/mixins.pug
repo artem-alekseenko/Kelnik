@@ -26,6 +26,6 @@ mixin flat-card(flat)
                     .flat-card__floor #{flat.floor} этаж
                 .flat-card__price= flat.price
             .flat-card__footer
-                .flat-card__status(.flat-card__status--${status})= flat.status
+                div(class=`flat-card__status flat-card__status--${status}`)= flat.status
         button.button-favorite
             img.button-favorite--star(src="./images/star.png", alt="star")
