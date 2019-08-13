@@ -43,9 +43,7 @@ const renderFlats = (flats, start, end) => {
 
         flat.innerHTML = flatArea;
         document.querySelector('.content__flats-cards').appendChild(flat);
-    }
-
-    finish === flats.length && document.querySelector('.content__more-results').classList.add('is-hidden');
+    }    
 };
 
 const loadFirstFlats = () => {
@@ -56,6 +54,7 @@ const loadFirstFlats = () => {
             renderFlats(data['flats'], 0, 12);
         })
 };
+
 loadFirstFlats()
 
 const loadMoreResults = () => {
