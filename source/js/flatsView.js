@@ -1,5 +1,5 @@
-const renderFlats = (flats) => {
-    for (let i = 0; i < flats.length; i++) {
+const renderFlats = (flats, start, end) => {
+    for (let i = start; i < end; i++) {
         let flat = document.createElement("div");
         flat.classList.add(`flat`);
 
@@ -45,18 +45,33 @@ const renderFlats = (flats) => {
         document.querySelector('.content__flats-cards').appendChild(flat);
     }
 
-    finish === flats.length && document.querySelector('.content__more-results').classList.add('hidden');
+    finish === flats.length && document.querySelector('.content__more-results').classList.add('is-hidden');
 };
+
+const loadFirstFlats = () => {
+    fetch('data/flats.json')
+        .then(response => response.json())
+        .then(data => {
+            let flats = document.querySelectorAll('.flat');
+            renderFlats(data['flats'], 0, 12);
+        })
+};
+loadFirstFlats()
 
 const loadMoreResults = () => {
     fetch('data/flats.json')
         .then(response => response.json())
         .then(data => {
-            let flats = document.querySelectorAll('.flat');            
-            renderFlats(data['flats'], flats.length);
+            let flats = document.querySelectorAll('.flat');
+            renderFlats(data['flats'], 12, 32);
         })
 };
 
 const buttonLoadMore = document.querySelector('.content__more-results')
-buttonLoadMore.addEventListener("click", () => loadMoreResults())
+
+buttonLoadMore.addEventListener("click", () => {
+    loadMoreResults()
+    buttonLoadMore.classList.add('is-hidden')
+}
+)
 
