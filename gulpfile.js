@@ -35,6 +35,11 @@ gulp.task('templates:compile', function buildHTML() {
         .pipe(gulp.dest('build'))
 });
 
+gulp.task('data', function () {
+    return gulp.src('source/data/*.json')
+      .pipe(gulp.dest('./build/data'));
+  })
+
 /* ------------ Styles compile ------------- */
 gulp.task('styles:compile', function () {
     return gulp.src('source/styles/main.scss')
@@ -52,7 +57,8 @@ gulp.task('styles:compile', function () {
 /* -------- JS  -------- */
 gulp.task('js', function () {
     return gulp.src([
-        'source/js/backtotop.js'
+        'source/js/backtotop.js',
+        'source/js/flatsView.js'
     ])
         .pipe(gulpif(isDev, sourcemaps.init()))
         .pipe(babel({
@@ -107,7 +113,7 @@ gulp.task('watch', function () {
 
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('templates:compile', 'styles:compile', 'js', 'sprite', 'copy'),
+    gulp.parallel('data', 'templates:compile', 'styles:compile', 'js', 'sprite', 'copy'),
     gulp.parallel('watch', 'server')
 )
 );
