@@ -10,16 +10,16 @@ section.content
             span.sorter__label Сортировать по:
             ul.sorter__list
                 li.sorter__item
-                    button(class="sorter__button" data-sort="price")
+                    button(class="sorter__button sort-price")
                         span.sorter__title Цене
                         span.sorter__icon
                             img.sorter__icon-arrow(src="./images/sort-arrow.svg", alt="sort-arrow")
                 li.sorter__item
-                    button(class="sorter__button" data-sort="rooms")
+                    button(class="sorter__button sort-rooms")
                         span.sorter__title Комнатам
                         span.sorter__icon
                             img.sorter__icon--arrow(src="./images/sort-arrow.svg", alt="sort-arrow")
-        .content__flats-cards
+        .content__flats-cards            
             //- - for (var i = 0; i < 12; i++)
             //-     +flat-card(flats[i])
         .content__more

@@ -60,7 +60,8 @@ gulp.task('js', function () {
         'source/js/backtotop.js',
         'source/js/flatsView.js',
         'source/js/validateEmail.js',
-        'source/js/toggleMenu.js'
+        'source/js/toggleMenu.js',
+        'source/js/sortFlats.js'
     ])
         .pipe(gulpif(isDev, sourcemaps.init()))
         .pipe(babel({

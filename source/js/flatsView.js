@@ -1,24 +1,24 @@
 const renderFlats = (flats, start, end) => {
-    for (let i = start; i < end; i++) {
-        let flat = document.createElement("div");
-        flat.classList.add(`flat`);
+  for (let i = start; i < end; i++) {
+    let flat = document.createElement("div");
+    flat.classList.add(`flat`);
 
-        let status = '';
-        switch (flats[i].status) {
-            case 'свободно':
-                status = 'free';
-                break;
-            case 'забронировано':
-                status = 'booked';
-                break;
-            case 'продано':
-                status = 'sold';
-                break;
-            default:
-                console.error('статус квартиры не указан');
-        }
+    let status = '';
+    switch (flats[i].status) {
+      case 'свободно':
+        status = 'free';
+        break;
+      case 'забронировано':
+        status = 'booked';
+        break;
+      case 'продано':
+        status = 'sold';
+        break;
+      default:
+        console.error('статус квартиры не указан');
+    }
 
-        let flatArea = `
+    let flatArea = `
         <a href="#" class="flat-card flat-card--${status}">
           <div class="flat-card__header">
             ${flats[i].sale ? `<span class="flat-card__label flat-card__sale"> ${flats[i].sale} </span>` : ''}
@@ -38,39 +38,36 @@ const renderFlats = (flats, start, end) => {
             <div class="flat-card__status flat-card__status--${status}">${flats[i].status}</div>
           </div>
         </a>
-        <button class="button-favorite " aria-label="Добавить в избранное"><img class="button-favorite--star" src="./images/star.png", alt="star"></img></button>
+        <button class="button-favorite " onclick="this.style = 'background-color: gold'" aria-label="Добавить в избранное"><img class="button-favorite--star" src="./images/star.png", alt="star"></img></button>
       `;
 
-        flat.innerHTML = flatArea;
-        document.querySelector('.content__flats-cards').appendChild(flat);
-    }    
+    flat.innerHTML = flatArea;
+    document.querySelector('.content__flats-cards').appendChild(flat);
+  }
 };
 
 const loadFirstFlats = () => {
-    fetch('data/flats.json')
-        .then(response => response.json())
-        .then(data => {
-            let flats = document.querySelectorAll('.flat');
-            renderFlats(data['flats'], 0, 12);
-        })
+  fetch('data/flats.json')
+    .then(response => response.json())
+    .then(data => {
+      renderFlats(data['flats'], 0, 12);
+    })
 };
 
 loadFirstFlats()
 
 const loadMoreResults = () => {
-    fetch('data/flats.json')
-        .then(response => response.json())
-        .then(data => {
-            let flats = document.querySelectorAll('.flat');
-            renderFlats(data['flats'], 12, 32);
-        })
+  fetch('data/flats.json')
+    .then(response => response.json())
+    .then(data => {
+      renderFlats(data['flats'], 12, 32);
+    })
 };
 
 const buttonLoadMore = document.querySelector('.content__more-results')
 
 buttonLoadMore.addEventListener("click", () => {
-    loadMoreResults()
-    buttonLoadMore.classList.add('is-hidden')
-}
-)
+  loadMoreResults()
+  buttonLoadMore.classList.add('is-hidden')
+})
 
