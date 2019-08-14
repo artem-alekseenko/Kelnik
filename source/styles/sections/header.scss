@@ -1,6 +1,13 @@
 .header {
   background-color: $color-main;
 
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+  }
+
   &__inner {
     display: flex;
     flex-wrap: wrap;
@@ -15,4 +22,3 @@
     }
   }
 }
-

@@ -59,7 +59,8 @@ gulp.task('js', function () {
     return gulp.src([
         'source/js/backtotop.js',
         'source/js/flatsView.js',
-        'source/js/validateEmail.js'
+        'source/js/validateEmail.js',
+        'source/js/toggleMenu.js'
     ])
         .pipe(gulpif(isDev, sourcemaps.init()))
         .pipe(babel({

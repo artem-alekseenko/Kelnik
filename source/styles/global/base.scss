@@ -9,6 +9,19 @@ body {
   font-size: 16px;
   line-height: 1.5;
   background-color: #faf9ef;
+
+  &.is-fixed {
+    position: fixed;
+    width: 100%;
+
+    .main {
+      margin-top: 68px;
+
+      @media only screen and (min-width: 992px) {
+        margin-top: 83px;
+      }
+    }
+  }
 }
 
 html {

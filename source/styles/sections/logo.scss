@@ -9,5 +9,9 @@
     @media only screen and (min-width: 992px) {
       width: 20px;
     }
+
+    @media only screen and (max-width: 991px) {
+      width: 15px;
+    }
   }
 }

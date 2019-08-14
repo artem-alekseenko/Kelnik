@@ -1,4 +1,24 @@
 .nav {
+  @media only screen and (max-width: 1199px) {
+    position: fixed;
+    top: 67px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    min-width: 320px;
+    padding-top: 15px;
+    padding-right: 16px;
+    padding-left: 16px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: rgba(0, 47, 47, 0.97);
+
+    &.is-active {
+      display: block;
+    }
+  }
+
   &__list {
     list-style: none;
     margin: 0;

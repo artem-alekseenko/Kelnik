@@ -1,0 +1,65 @@
+.toggle-menu {
+  display: block;
+  width: 42px;
+  height: 36px;
+  padding: 8px;
+  position: relative;
+
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+
+  @media only screen and (min-width: 1200px) {
+    display: none;
+  }
+
+  &.is-active {
+    .toggle-menu__line {
+      &:nth-child(1) {
+        top: 18px;
+        left: 50%;
+        width: 0;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(4) {
+        top: 18px;
+        left: 50%;
+        width: 0;
+      }
+    }
+  }
+
+  &__line {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 26px;
+    background: #fff;
+    border-radius:  3px;
+    opacity: 1;
+    left: 8px;
+    transform: rotate(0deg);
+    transition: all .25s ease-in-out 0s;
+  
+    &:nth-child(1) {
+      top: 8px;
+    }
+  
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 18px;
+    }
+  
+    &:nth-child(4) {
+      top: 28px;
+    }
+  }
+}
